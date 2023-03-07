@@ -1,0 +1,42 @@
+\begin{frame}
+    \begin{block}{Schnelles \alert{Divide and Conquer}-Verfahren}
+        \begin{itemize}
+            \item Ansatz: Sortiere Elemente bzgl eines Referenzelements vor. Sortiere anschließend rekursiv die Teillisten.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vorteile}
+        \begin{itemize}
+            \item schnell für lange Listen
+            \item Gilt (mit Modifikationen) als das schnellste verfügbare Sortierverfahren.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Worst Case: \alert{\osquare}.
+            \item Average- und Best-Case: \alert{\onlog}.
+            \item Vorsortieren braucht $n$ Vergleiche.
+            \item Im Idealfall wird mit jedem Schritt die Liste halbiert.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Schnelles \alert{Divide and Conquer}-Verfahren}
+        \begin{itemize}
+            \item Ansatz: Sortiere Elemente bzgl eines Referenzelements vor. Sortiere anschließend rekursiv die Teillisten.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Modifikationen}
+        \begin{itemize}
+            \item Für kurze Listen auf \emph{InsertionSort} ausweichen.
+            \item Rekursionstiefe begrenzen: Auf \emph{MergeSort} wechseln, um \onlog im Worst-Case zu garantieren.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Beobachtung}
+        \begin{itemize}
+            \item kann sehr effizient \alert{in place} umgesetzt werden.
+            \item Der Worst-Case ist gerade die umgekehrt sortierte Liste.
+            \item gut parallelisierbar
+        \end{itemize}
+    \end{block}
+\end{frame}

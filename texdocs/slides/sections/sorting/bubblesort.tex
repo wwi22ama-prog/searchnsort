@@ -1,0 +1,64 @@
+\begin{frame}
+    \begin{block}{Sortieren durch Aufsteigen}
+        \begin{itemize}
+            \item Ansatz: Tausche nach und nach Elemente nach rechts, wenn sie größer als ihre Nachbarn sind.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vorteile}
+        \begin{itemize}
+            \item schnell für kurze Listen
+            \item sehr intuitiv
+            \item Lokales Verhalten: Vergleiche nur benachbarte Elemente.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Quadratisch in der Länge der Liste  (Schreibe: \alert{\osquare}).
+            \item Bei Länge $n$ müssen $n$ Elemente aufsteigen.
+            \item Jeder Durchlauf dauert bis zu $n$ Schritte.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Sortieren durch Aufsteigen}
+        \begin{itemize}
+            \item Ansatz: Tausche nach und nach Elemente nach rechts, wenn sie größer als ihre Nachbarn sind.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Beobachtung}
+        \begin{itemize}
+            \item kann sehr effizient \alert{in place} umgesetzt werden.
+            \item d.h. ohne eine separate Hilfsliste
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Analyse}
+        \begin{itemize}
+            \item Große Elemente am Anfang steigen schnell auf.
+            \item Kleine Elemente am Ende sinken nur langsam ab.
+            \item $\Rightarrow$ langsam bei (fast) umgekehrt sortierten Listen
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Beobachtung bei BubbleSort}
+        \begin{itemize}
+            \item Große Elemente steigen schnell auf, kleine sinken langsam ab.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Weiterentwicklung: CombSort/GapSort}
+        \begin{itemize}
+            \item Ansatz: Vergleiche und vertausche am Anfang Elemente mit größerem Abstand
+            \item Komplexität im Best Case: \alert{\onlog}.
+            \item Komplexität im Worst Case: \alert{\osquare}.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Weiterentwicklung: CocktailSort}
+        \begin{itemize}
+            \item Ansatz: Wie bei BubbleSort, aber wechsele die Richtungen ab.
+            \item Vorteil: Alle Elemente bewegen sich ungefähr gleich schnell.
+            \item Komplexität im Best und Worst Case: \alert{\osquare}.
+        \end{itemize}
+    \end{block}
+\end{frame}

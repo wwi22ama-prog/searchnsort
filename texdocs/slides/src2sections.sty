@@ -1,0 +1,57 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{src2sections}[2023/03/01 Source2Sections]
+
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+
+%% framesection environment:
+% Starts a section (or whatever is given as the optional argument) and redefines
+% the \frame command so that it contains the framesection's title.
+% #1: section type
+% #2: section title
+\newenvironment{framesection}[2][\section]{
+    #1{#2}
+    \appendtofstitle{#2}
+}{}
+
+%% \setfstitle stores a string for use as a title for frames in a framesection.
+\newcommand{\setfstitle}[1]{
+    \edef\src@sections@fstitle{#1}
+}
+% Initialize the new frame title string.
+\setfstitle{}
+
+%% \appendtofstitle appends a string to the frame title string.
+\newcommand{\appendtofstitle}[1]{
+    % TODO: At the moment, nested titles are appended unconditionally. Make this optional?
+    \ifcsvoid{src@sections@fstitle}{\setfstitle{#1}}{\setfstitle{\src@sections@fstitle\ -- #1 }}
+}
+
+%% \insertfstitle:
+% Uses \src@sections@fstitle as the current frame's title.
+% Must be used inside a frame.
+\newcommand{\insertfstitle}{
+    \frametitle{\src@sections@fstitle}
+}
+
+% Redefine \frame command to use \src@sections@fstitle.
+\let\src@sections@originalframe=\frame
+\renewcommand{\frame}{\src@sections@originalframe\insertfstitle}
+
+%% \inputframesection inserts a file inside a framesection environment.
+% #1: section type
+% #2: section title
+% #3: file name to be inserted 
+% #4: directory where to look for the file (relative to the root document)
+\NewDocumentCommand{\inputframesection}{ O{\section} m m O{\src@sections@fspath}}{
+    \begin{framesection}[#1]{#2}
+        \input{#4/#3}
+    \end{framesection}
+}
+
+%% \setfspath defines where \inputframesection will search for files by default.
+\newcommand{\setfspath}[1]{\edef\src@sections@fspath{#1}}
+% Initialize framesection search path
+\setfspath{sections}
+
+\endinput

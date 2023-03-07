@@ -1,0 +1,41 @@
+\begin{frame}
+    \begin{block}{Sortieren durch Auswählen}
+        \begin{itemize}
+            \item Ansatz: Suche das kleinste Element aus dem noch unsortierten Teil und hänge es ans Ende der sortierten Liste.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vorteil}
+        \begin{itemize}
+            \item schnell für kurze Listen
+            \item einfach zu verstehen und zu implementieren.
+            \item typischer Aufräum-Ansatz
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Quadratisch in der Länge der Liste  (Schreibe: \alert{\osquare}).
+            \item Bei Länge $n$ müssen $n$ Elemente gesucht werden.
+            \item Jede Suche dauert bis zu $n$ Schritte.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Sortieren durch Auswählen}
+        \begin{itemize}
+            \item Ansatz: Suche das kleinste Element aus dem noch unsortierten Teil und hänge es ans Ende der sortierten Liste.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{typische Implementierung für das Einsortieren eines Elements}
+        \begin{itemize}
+            \item Suche das kleinste Element im unsortierten Teil der Liste.
+            \item Vertausche das Element mit dem ersten noch nicht einsortierten.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Beobachtung}
+        \begin{itemize}
+            \item kann sehr effizient \alert{in place} umgesetzt werden.
+            \item d.h. ohne eine separate Hilfsliste
+        \end{itemize}
+    \end{block}
+\end{frame}

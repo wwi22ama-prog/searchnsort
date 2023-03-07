@@ -1,0 +1,21 @@
+\begin{frame}
+    \begin{block}{Ziel: Finde die Position eines Elements in einer Liste}
+        \begin{itemize}
+            \item Ansatz: Vergleiche das mittlere Element mit dem gesuchten.
+            \item Fahre entweder nur links oder nur rechts der Mitte fort.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vor- und Nachteile}
+        \begin{itemize}
+            \item Funktioniert nur für sortierte Listen.
+            \item Ist erheblich schneller als die lineare Suche.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Logarithmisch in der Länge der Liste (Schreibe: \alert{\olog}).
+            \item In jedem Schritt wird der Suchraum halbiert (\gqq{\alert{Divide and Conquer}}).
+            \item Bei Länge $n$ müssen im Worst Case nur $\log_{2}{n}$ Elemente mit dem gesuchten verglichen werden. 
+        \end{itemize}
+    \end{block}
+\end{frame}

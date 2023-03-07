@@ -1,0 +1,42 @@
+\begin{frame}
+    \begin{block}{Schnelles \alert{Divide and Conquer}-Verfahren}
+        \begin{itemize}
+            \item Ansatz: Halbiere die Liste rekursiv, bis nur noch einzelne Elemente übrig sind.
+                          Setze dann sortierte Listen zu längeren sortierten Listen zusammen.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vorteile}
+        \begin{itemize}
+            \item schnell für lange Listen
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Worst Case: \alert{\onlog}.
+            \item Mit jedem Schritt wird die Liste halbiert.
+            \item Zusammensetzen dauert $n$ Schritte.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Schnelles \alert{Divide and Conquer}-Verfahren}
+        \begin{itemize}
+            \item Ansatz: Halbiere die Liste rekursiv, bis nur noch einzelne Elemente übrig sind.
+                          Setze dann sortierte Listen zu längeren sortierten Listen zusammen.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Modifikationen}
+        \begin{itemize}
+            \item \emph{TimSort}: Identifiziere bereits sortierte Teillisten und spare diese bei der Rekursion aus.
+            \item Standard-Sortierverfahren in Python
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Beobachtung}
+        \begin{itemize}
+            \item i.d.R. nicht in place umgesetzt (braucht Hilfsarrays der Länge $n/2$)
+            \item gut für verkettete Listen
+            \item gut parallelisierbar
+        \end{itemize}
+    \end{block}
+\end{frame}

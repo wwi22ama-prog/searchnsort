@@ -1,0 +1,31 @@
+\input{preamble}
+
+\title{Suchen und Sortieren}
+\author{Reiner Hüchting}
+
+\AtBeginSection{
+    \begin{frame}
+        \frametitle{Themenüberblick}
+        \tableofcontents[sectionstyle={show/shaded}, subsectionstyle={show/hide/hide}]
+    \end{frame}
+}
+\AtBeginSubsection{
+    \begin{frame}
+        \frametitle{Themenüberblick}
+        \tableofcontents[sectionstyle={show/shaded}, subsectionstyle={show/shaded/hide}]
+    \end{frame}
+}
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Themenüberblick}
+        \tableofcontents[hideallsubsections]
+    \end{frame}
+
+    \inputframesection{Suchverfahren}{searching.tex}
+    \inputframesection{Sortierverfahren}{sorting.tex}
+\end{document}

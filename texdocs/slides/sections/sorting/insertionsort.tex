@@ -1,0 +1,41 @@
+\begin{frame}
+    \begin{block}{Sortieren durch Einfügen}
+        \begin{itemize}
+            \item Ansatz: Nimm das nächstbeste Element und füge es an der passenden Stelle ein.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Vorteil}
+        \begin{itemize}
+            \item schnell für kurze Listen
+            \item einfach zu verstehen und zu implementieren.
+            \item typischer Aufräum-Ansatz
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Komplexität}
+        \begin{itemize}
+            \item Quadratisch in der Länge der Liste  (Schreibe: \alert{\osquare}).
+            \item Bei Länge $n$ müssen $n$ Elemente einsortiert werden.
+            \item Jedes Einsortieren dauert bis zu $n$ Schritte.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Sortieren durch Einfügen}
+        \begin{itemize}
+            \item Ansatz: Nimm das nächstbeste Element und füge es an der passenden Stelle ein.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{typische Implementierung für das Einsortieren eines Elements}
+        \begin{itemize}
+            \item Füge das nächste Element am Ende der Liste an.
+            \item Tausche es solange nach links, bis es größer als sein linker Nachbar ist.
+        \end{itemize}
+    \end{block}
+    \begin{block}<3->{Beobachtung}
+        \begin{itemize}
+            \item kann sehr effizient \alert{in place} umgesetzt werden.
+            \item d.h. ohne eine separate Hilfsliste
+        \end{itemize}
+    \end{block}
+\end{frame}
