@@ -27,7 +27,7 @@ public class Search {
      * 
      * @param list Die Liste, die durchsucht werden soll.
      * @param key Der Schlüssel, nach dem gesucht werden soll.
-     * @return Die Position des ersten Vorkommens von key. 
+     * @return Die Position von key. 
      *         Oder -1, falls key nicht vorkommt.
      * 
      * Anmerkung: Diese Funktion kann nur für sortierte Listen ein sinnvolles Ergebnis liefern.
@@ -45,6 +45,14 @@ public class Search {
             return binary(list.subList(0, midpos), key);
         }
         int result = binary(list.subList(midpos+1, list.size()), key);
+        
         return result == -1 ? -1 : result + midpos + 1;
+        /*
+        if (result == -1) {
+            return -1;
+        } else {
+            return result + midpos + 1;
+        }
+        */
     }
 }

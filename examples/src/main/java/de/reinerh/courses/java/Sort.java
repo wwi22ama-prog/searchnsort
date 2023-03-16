@@ -16,7 +16,6 @@ public class Sort {
                 Collections.swap(list, j, j-1);
             }
         }
-
     }
 
     /** Implementierung des Sortierverfahrens SelectionSort. */
