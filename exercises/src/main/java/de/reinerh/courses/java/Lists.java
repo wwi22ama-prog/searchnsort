@@ -46,19 +46,9 @@ public class Lists {
         int left = 0;
         int right = list.size()-1;
 
-        while (left <= right) {
-            int leftValue = list.get(left);
-            int rightValue = list.get(right);
+        // TODO
 
-            if (leftValue > n && rightValue <= n) {
-                Collections.swap(list, left, right);
-            }
-
-            if (leftValue <= n) { left++; }
-            if (rightValue > n) { right--; }
-        }
-
-        return left;
+        return 0;
     }
 
     public static void qsort(List<Integer> list) {
