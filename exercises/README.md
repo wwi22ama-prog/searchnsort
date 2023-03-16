@@ -9,7 +9,7 @@
    **Aufgabe:**
    Ändern Sie die Implementierung der binären Suche so ab, dass auch sie bei mehreren Vorkommen eines Schlüssels
    den ersten dieser Schlüssel liefert.
-   Hier im Übungs-Modul sind die Implementierungen der Suchen aus den Beispielen sowie
+   Hier im Übungs-Modul sind die Implementierungen der Suche aus den Beispielen sowie
    entsprechend abgeänderte Tests wieder vorgegeben.
 
 ## Aufgaben zu Sortierverfahren

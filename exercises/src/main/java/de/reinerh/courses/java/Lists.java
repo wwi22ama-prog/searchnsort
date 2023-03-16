@@ -23,12 +23,11 @@ public class Lists {
         }
         int midpos = list.size() / 2;
 
+        if (list.get(midpos) == key) {
+            return midpos;
+        }
         if (key <= list.get(midpos)) {
-            int result = binarySearch(list.subList(0, midpos), key);
-            if (result != -1) {
-                return result;
-            }
-            return list.get(midpos) == key ? midpos : -1;
+            return binarySearch(list.subList(0, midpos), key);
         }
         int result = binarySearch(list.subList(midpos+1, list.size()), key);
         return result == -1 ? -1 : result + midpos + 1;
@@ -68,13 +67,6 @@ public class Lists {
             return;
         }
         
-        // Liste nach pivot partitionieren und das Pivotelement in die Mitte tauschen.
-        int pivot = list.get(0);
-        int pivotpos = partition(list.subList(1, list.size()), pivot);
-        Collections.swap(list,0,pivotpos);
-
-        // Rekursiv sortieren.
-        qsort(list.subList(0, pivotpos));
-        qsort(list.subList(pivotpos+1, list.size()));
+        // TODO: "Kurze" Variante von QuickSort mittels Partition implementieren.
     }
 }
